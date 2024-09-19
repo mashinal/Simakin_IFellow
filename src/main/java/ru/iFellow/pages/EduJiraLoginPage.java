@@ -20,7 +20,6 @@ public class EduJiraLoginPage {
         loginButton.click();
 
         return this;
-
     }
 
     @Step("Проверка видимости кнопки 'Создать'")

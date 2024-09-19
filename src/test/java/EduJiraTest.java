@@ -1,5 +1,4 @@
-import config.WebHooks;
-import org.apache.commons.lang3.RandomStringUtils;
+import hooks.WebHooks;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.iFellow.pages.EduJiraLoginPage;
@@ -7,7 +6,7 @@ import ru.iFellow.pages.HomePage;
 import ru.iFellow.pages.TaskATHomeworkPage;
 import ru.iFellow.pages.TestPage;
 import ru.iFellow.pages.models.CreateTaskModal;
-import ru.iFellow.utils.CredentialsReader;
+import ru.iFellow.utils.Props;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -18,9 +17,10 @@ public class EduJiraTest extends WebHooks {
     @DisplayName("Авторизоваться в edujira")
     public void loginToEduJiraTest() {
 
-        CredentialsReader credentialsReader = new CredentialsReader();
-        String login = credentialsReader.getLogin();
-        String password = credentialsReader.getPassword();
+        Props props = Props.props;
+
+        String login = props.login();
+        String password = props.password();
 
         EduJiraLoginPage loginPage = new EduJiraLoginPage();
         loginPage.login(login, password);
@@ -31,9 +31,10 @@ public class EduJiraTest extends WebHooks {
     @DisplayName("Перейти в проект 'Test'")
     public void clickProjectTest() {
 
-        CredentialsReader credentialsReader = new CredentialsReader();
-        String login = credentialsReader.getLogin();
-        String password = credentialsReader.getPassword();
+        Props props = Props.props;
+
+        String login = props.login();
+        String password = props.password();
 
         EduJiraLoginPage loginPage = new EduJiraLoginPage();
         loginPage.login(login, password);
@@ -48,9 +49,10 @@ public class EduJiraTest extends WebHooks {
     @DisplayName("Проверить общее количество заведенных задач в проекте")
     public void checkNumberCreatedTasks() {
 
-        CredentialsReader credentialsReader = new CredentialsReader();
-        String login = credentialsReader.getLogin();
-        String password = credentialsReader.getPassword();
+        Props props = Props.props;
+
+        String login = props.login();
+        String password = props.password();
 
         EduJiraLoginPage loginPage = new EduJiraLoginPage();
         loginPage.login(login, password);
@@ -72,9 +74,10 @@ public class EduJiraTest extends WebHooks {
     @DisplayName("Перейти в задачу TestSeleniumATHomework и проверить 'статус задачи' и 'Исправить в версиях'")
     public void cheskStatusTask() {
 
-        CredentialsReader credentialsReader = new CredentialsReader();
-        String login = credentialsReader.getLogin();
-        String password = credentialsReader.getPassword();
+        Props props = Props.props;
+
+        String login = props.login();
+        String password = props.password();
 
         EduJiraLoginPage loginPage = new EduJiraLoginPage();
         loginPage.login(login, password);
@@ -100,9 +103,10 @@ public class EduJiraTest extends WebHooks {
     @DisplayName("Создать новый баг с описанием")
     public void createBug() {
 
-        CredentialsReader credentialsReader = new CredentialsReader();
-        String login = credentialsReader.getLogin();
-        String password = credentialsReader.getPassword();
+        Props props = Props.props;
+
+        String login = props.login();
+        String password = props.password();
 
         EduJiraLoginPage loginPage = new EduJiraLoginPage();
         loginPage.login(login, password);
@@ -127,7 +131,7 @@ public class EduJiraTest extends WebHooks {
         assertTrue(taskPage.isFixVersionCorrect(), "'Исправить в версиях' не содержит 'Version 2.0'.");
 
         CreateTaskModal createTaskModal = new CreateTaskModal();
-        createTaskModal.createTackBug();
+        createTaskModal.createTaskBug();
 
         taskPage.clickAlertLink()
                 .moveTicketToClose()

@@ -1,5 +1,6 @@
 package ru.iFellow.pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -25,6 +26,7 @@ public class TestPage {
         createTaskButton.click();
         CreateTaskModal createTaskModal = new CreateTaskModal();
         createTaskModal.createNewTask();
+        createTaskButton.shouldHave(Condition.visible);
         Selenide.refresh();
     }
 }

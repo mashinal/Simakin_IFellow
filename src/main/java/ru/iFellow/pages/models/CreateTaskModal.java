@@ -20,10 +20,8 @@ public class CreateTaskModal {
     private final SelenideElement fieldTask = $x("//textarea[@id='issuelinks-issues-textarea']");
     private final SelenideElement createTaskButton = $x("//a[@id='create_link']");
     private final SelenideElement loadingCircle = $x("//div[contains(@class,'spinner')]");
-    private final SelenideElement searchField = $x("//input[@id='quickSearchInput']");
     private final ElementsCollection typeTaskOptions = $$x("//li[contains(@role,'option')]");
-    private final SelenideElement firstElementDropdown = $x("//a[@class='icon-container quick-search-active']");
-
+    private final SelenideElement firstElementDropdownTask = $x("//a[@role='presentation']");
 
 
     public void setType(String type) {
@@ -46,16 +44,15 @@ public class CreateTaskModal {
     }
 
     @Step("Создать новую задачу с типом 'Ошибка'")
-    public void createTackBug() {
+    public void createTaskBug() {
         createTaskButton.click();
         setType("Ошибка");
         taskNameField.setValue("Баг репорт");
         descriptionTextArea.setValue(RandomStringUtils.randomAlphanumeric(10));
         fieldLabels.setValue("Test");
         environmentField.setValue("Test");
-        fieldTask.setValue("TEST-120632");
+        fieldTask.setValue("TEST");
+        firstElementDropdownTask.click();
         createButton.click();
     }
-
-
 }
