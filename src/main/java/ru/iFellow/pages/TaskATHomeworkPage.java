@@ -1,6 +1,5 @@
 package ru.iFellow.pages;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
@@ -14,14 +13,15 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class TaskATHomeworkPage {
 
-    private final SelenideElement searchField = $x("//input[@id='quickSearchInput']");
-    private final ElementsCollection searchElements = $$x("//li[contains(@class,'quick-search-result-item')]");
-    private final SelenideElement taskStatus = $x("//span[contains(text(),'Сделать')]");
-    private final SelenideElement fixVersion = $x("//a[contains(text(), 'Version 2.0')]");
-    private final SelenideElement createdAlert = $x("//a[contains(@class,'issue-created')]");
-    private final SelenideElement statusLabel = $x("//span[@id='status-val']");
+    private final SelenideElement searchField = $x("//input[@id='quickSearchInput']").as("Поле поиска");
+    private final ElementsCollection searchElements = $$x("//li[contains(@class,'quick-search-result-item')]").as("Первый элемент из выпадающего списка поиска");
+    private final SelenideElement taskStatus = $x("//span[contains(text(),'Сделать')]").as("Поле Статус задачи");
+    private final SelenideElement fixVersion = $x("//a[contains(text(), 'Version 2.0')]").as("Поле Исправить в версиях");
+    private final SelenideElement createdAlert = $x("//a[contains(@class,'issue-created')]").as("Всплывающее окно созданной заявки");
+    private final SelenideElement statusLabel = $x("//span[@id='status-val']").as("Статус заявки Готово");
+
     private SelenideElement statusButton(String status) {
-        return $x("//a[./span[text()='" + status + "']]");
+        return $x("//a[./span[text()='" + status + "']]").as("Кнопка Статуса");
     }
 
     @Step("Найти задачу {taskName}")

@@ -8,10 +8,10 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class EduJiraLoginPage {
 
-    private final SelenideElement loginField = $x("//input[@id='login-form-username']");
-    private final SelenideElement passwordField = $x("//input[@id='login-form-password']");
-    private final SelenideElement loginButton = $x("//input[contains(@value, 'Войти')]");
-    private final SelenideElement createButton = $x("//a[contains(text(), 'Создать')]");
+    private final SelenideElement loginField = $x("//input[@id='login-form-username']").as("Поле Имя пользователя");
+    private final SelenideElement passwordField = $x("//input[@id='login-form-password']").as("Поле Пароль");
+    private final SelenideElement loginButton = $x("//input[contains(@value, 'Войти')]").as("Кнопка Войти");
+    private final SelenideElement createButton = $x("//a[contains(text(), 'Создать')]").as("Кнопка Создать");
 
     @Step("Ввести данные логина и пароля и нажать на вход")
     public EduJiraLoginPage login(String username, String password) {
