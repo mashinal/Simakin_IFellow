@@ -21,7 +21,7 @@ public class CreateTaskModal {
     private final SelenideElement createTaskButton = $x("//a[@id='create_link']");
     private final SelenideElement loadingCircle = $x("//div[contains(@class,'spinner')]");
     private final ElementsCollection typeTaskOptions = $$x("//li[contains(@role,'option')]");
-    private final SelenideElement firstElementDropdownTask = $x("//a[@role='presentation']");
+    private final ElementsCollection firstElementDropdownTask = $$x("//a[@role='presentation']");
 
 
     public void setType(String type) {
@@ -52,7 +52,7 @@ public class CreateTaskModal {
         fieldLabels.setValue("Test");
         environmentField.setValue("Test");
         fieldTask.setValue("TEST");
-        firstElementDropdownTask.click();
+        firstElementDropdownTask.findBy(visible).click();
         createButton.click();
     }
 }

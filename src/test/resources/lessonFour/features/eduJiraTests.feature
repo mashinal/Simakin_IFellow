@@ -4,7 +4,7 @@ Feature: Тестирование EduJira
   Background:
     Given Я открываю браузер и инициализирую его
 
-  Scenario: Авторизоваться в EduJira
+  Scenario: : Авторизоваться в EduJira
     When Я ввожу логин и пароль и нажимаю на вход
     Then Я вижу кнопку "Создать"
 

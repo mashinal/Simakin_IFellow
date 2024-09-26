@@ -1,4 +1,4 @@
-package lessonFour.step;
+package ru.iFellow.step;
 
 import io.cucumber.java.en.*;
 import org.junit.jupiter.api.Assertions;

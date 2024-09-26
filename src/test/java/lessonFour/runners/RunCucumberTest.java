@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/lessonFour/features",
-        glue = {"lessonFour.step", "lessonFour.hooks"},
+        glue = {"ru.iFellow.step", "lessonFour.hooks"},
         plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         monochrome = true,
         tags = "@EduJira"
