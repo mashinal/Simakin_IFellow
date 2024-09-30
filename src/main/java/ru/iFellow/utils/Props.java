@@ -14,13 +14,9 @@ public interface Props extends Config {
     @Key("login")
     String login();
 
-    @Key("base.url")
-    String baseUrl();
+    @Key("rickandmorty.base.url")
+    String rickAndMortyBaseUrl();
 
-    @Key("headless.mode")
-    @DefaultValue("false")
-    boolean headlessMode();
-
-    @Key("default.timeout")
-    int timeout();
+    @Key("createuser.base.url")
+    String createuserBaseUrl();
 }
