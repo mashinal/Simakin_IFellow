@@ -1,5 +1,5 @@
 ./target
-./idea
+.idea
 ./allure-results
 *.iml
 /.DS_Store
