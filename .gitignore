@@ -1,5 +1,8 @@
-./target
-.idea
-./allure-results
+
+target/
+allure-results/
+.idea/
 *.iml
-/.DS_Store
+out/
+*.log
+*.tmp
