@@ -23,8 +23,9 @@ public class EduJiraTest extends WebHooks {
         String password = props.password();
 
         EduJiraLoginPage loginPage = new EduJiraLoginPage();
-        loginPage.login(login, password);
-        loginPage.checkLoggedIn();
+        loginPage
+                .login(login, password)
+                .checkLoggedIn();
     }
 
     @Test
@@ -37,8 +38,9 @@ public class EduJiraTest extends WebHooks {
         String password = props.password();
 
         EduJiraLoginPage loginPage = new EduJiraLoginPage();
-        loginPage.login(login, password);
-        loginPage.checkLoggedIn();
+        loginPage.
+                login(login, password)
+                .checkLoggedIn();
 
         HomePage homePage = new HomePage();
         homePage.clickProjectTest();
@@ -55,8 +57,9 @@ public class EduJiraTest extends WebHooks {
         String password = props.password();
 
         EduJiraLoginPage loginPage = new EduJiraLoginPage();
-        loginPage.login(login, password);
-        loginPage.checkLoggedIn();
+        loginPage
+                .login(login, password)
+                .checkLoggedIn();
 
         HomePage homePage = new HomePage();
         homePage.clickProjectTest();
@@ -80,8 +83,9 @@ public class EduJiraTest extends WebHooks {
         String password = props.password();
 
         EduJiraLoginPage loginPage = new EduJiraLoginPage();
-        loginPage.login(login, password);
-        loginPage.checkLoggedIn();
+        loginPage
+                .login(login, password)
+                .checkLoggedIn();
 
         HomePage homePage = new HomePage().clickProjectTest();
         assertTrue(homePage.isOpenTasks(), "Текст 'Открытые задачи' не видно на странице");
@@ -109,8 +113,9 @@ public class EduJiraTest extends WebHooks {
         String password = props.password();
 
         EduJiraLoginPage loginPage = new EduJiraLoginPage();
-        loginPage.login(login, password);
-        loginPage.checkLoggedIn();
+        loginPage
+                .login(login, password)
+                .checkLoggedIn();
 
         HomePage homePage = new HomePage().clickProjectTest();
 
