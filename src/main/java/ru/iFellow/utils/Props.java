@@ -17,10 +17,6 @@ public interface Props extends Config {
     @Key("base.url")
     String baseUrl();
 
-    @Key("headless.mode")
-    @DefaultValue("false")
-    boolean headlessMode();
-
-    @Key("default.timeout")
-    int timeout();
+    @Key("chromedriver.path")
+    String chromedriverPath();
 }

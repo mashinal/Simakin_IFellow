@@ -6,10 +6,14 @@ import com.codeborne.selenide.WebDriverRunner;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import ru.iFellow.utils.Props;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class WebHooks {
     private static final Logger logger = LoggerFactory.getLogger(WebHooks.class);
@@ -18,6 +22,16 @@ public class WebHooks {
     @BeforeEach
     public void initBrowser() {
         logger.info("Инициализация браузера");
+
+        String chromeDriverPath = props.chromedriverPath();
+        if (chromeDriverPath != null && !chromeDriverPath.isEmpty() && Files.exists(Paths.get(chromeDriverPath))) {
+            System.out.println(String.format("Указан путь к ChromeDriver: %s", chromeDriverPath));
+            System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+            WebDriver webDriver = new ChromeDriver();
+            WebDriverRunner.setWebDriver(webDriver);
+        } else {
+            logger.info("Путь к ChromeDriver не указан. Используем драйвер по умолчанию Selenide");
+        }
 
         Configuration.browser = "chrome";
         Configuration.pageLoadStrategy = String.valueOf(PageLoadStrategy.NORMAL);

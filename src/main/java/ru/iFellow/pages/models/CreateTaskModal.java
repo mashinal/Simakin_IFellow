@@ -11,17 +11,17 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class CreateTaskModal {
 
-    private final SelenideElement fieldTaskType = $x("//input[@id='issuetype-field']");
-    private final SelenideElement taskNameField = $x("//input[@id='summary']");
-    private final SelenideElement createButton = $x("//input[@id='create-issue-submit']");
-    private final SelenideElement descriptionTextArea = $x("//textarea[@id='description']");
-    private final SelenideElement fieldLabels = $x("//textarea[@id='labels-textarea']");
-    private final SelenideElement environmentField = $x("//textarea[@id='environment']");
-    private final SelenideElement fieldTask = $x("//textarea[@id='issuelinks-issues-textarea']");
-    private final SelenideElement createTaskButton = $x("//a[@id='create_link']");
-    private final SelenideElement loadingCircle = $x("//div[contains(@class,'spinner')]");
-    private final ElementsCollection typeTaskOptions = $$x("//li[contains(@role,'option')]");
-    private final SelenideElement firstElementDropdownTask = $x("//a[@role='presentation']");
+    private final SelenideElement fieldTaskType = $x("//input[@id='issuetype-field']").as("Строка 'Тип Задачи'");
+    private final SelenideElement taskNameField = $x("//input[@id='summary']").as("Строка 'Тема'");
+    private final SelenideElement createButton = $x("//input[@id='create-issue-submit']").as("Кнопка создать");
+    private final SelenideElement descriptionTextArea = $x("//textarea[@id='description']").as("Поле 'Описание'");
+    private final SelenideElement fieldLabels = $x("//textarea[@id='labels-textarea']").as("Строка 'Метки'");
+    private final SelenideElement environmentField = $x("//textarea[@id='environment']").as("Поле 'Окружение'");
+    private final SelenideElement fieldTask = $x("//textarea[@id='issuelinks-issues-textarea']").as("Строка 'Задача'");
+    private final SelenideElement createTaskButton = $x("//a[@id='create_link']").as("Кнопка 'создать новую задачу'");
+    private final SelenideElement loadingCircle = $x("//div[contains(@class,'spinner')]").as("Поле поиска");
+    private final ElementsCollection typeTaskOptions = $$x("//li[contains(@role,'option')]").as("Выпадающий список строки 'Тип задачи'");
+    private final SelenideElement firstElementDropdownTask = $x("//a[@role='presentation']").as("Первый элемент выпадающего списка строки 'Тип ЗАдачи'");
 
 
     public void setType(String type) {

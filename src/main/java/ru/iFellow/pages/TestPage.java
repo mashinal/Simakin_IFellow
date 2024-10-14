@@ -11,8 +11,8 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class TestPage {
 
-    private final SelenideElement taskCountElement = $x("//span[contains(text(), '1 из')]");
-    private final SelenideElement createTaskButton = $x("//a[@id='create_link']");
+    private final SelenideElement taskCountElement = $x("//span[contains(text(), '1 из')]").as("Поле номер заявки");
+    private final SelenideElement createTaskButton = $x("//a[@id='create_link']").as("Кнопка создать Задачу");
 
     @Step("Получить текущее количество задач")
     public int getTaskCount() {
