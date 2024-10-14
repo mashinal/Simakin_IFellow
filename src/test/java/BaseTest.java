@@ -1,5 +1,4 @@
 import hooks.WebHooks;
-import org.junit.jupiter.api.BeforeEach;
 import ru.iFellow.pages.EduJiraLoginPage;
 import ru.iFellow.pages.HomePage;
 import ru.iFellow.utils.Props;
@@ -8,10 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BaseTest extends WebHooks {
 
-//    @BeforeEach
-//    public void setUp() {
-//        loginToEduJira();
-//    }
 
     protected void loginToEduJira() {
         Props props = Props.props;
