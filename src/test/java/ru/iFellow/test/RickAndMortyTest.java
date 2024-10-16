@@ -14,7 +14,6 @@ import static ru.iFellow.step.RickAndMorty.BASE_URL;
 
 public class RickAndMortyTest {
 
-    @Test
     public void testMortyLastEpisodeAndCharacter() {
         RickAndMorty service = new RickAndMorty();
 

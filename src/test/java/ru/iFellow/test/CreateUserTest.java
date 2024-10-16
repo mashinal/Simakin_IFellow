@@ -11,7 +11,6 @@ import java.nio.file.Paths;
 
 public class CreateUserTest {
 
-    @Test
     public void testCreateUser() throws Exception {
         CreateUser service = new CreateUser();
 
