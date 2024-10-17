@@ -8,12 +8,6 @@ public interface Props extends Config {
 
     Props props = ConfigFactory.create(Props.class);
 
-    @Key("password")
-    String password();
-
-    @Key("login")
-    String login();
-
     @Key("rickandmorty.base.url")
     String rickAndMortyBaseUrl();
 

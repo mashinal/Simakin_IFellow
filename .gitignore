@@ -1,3 +1,7 @@
-./target
-./.idea
-./allure-results
+target/
+allure-results/
+.idea/
+*.iml
+out/
+*.log
+*.tmp
